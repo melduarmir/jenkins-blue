@@ -10,6 +10,10 @@ pipeline {
       steps {
         git(url: 'gitulr', branch: '*/master')
         sh 'fdsfdsfdsfds'
+        node(label: 'zzzz') {
+          sh 'gfdgfdg2222'
+        }
+        
       }
     }
   }
