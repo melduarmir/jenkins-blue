@@ -13,18 +13,31 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh '''${tool name: 'sbt-0.13.13', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt compile test
+        parallel(
+          "Build": {
+            sh '''${tool name: 'sbt-0.13.13', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt compile test
 '''
+            
+          },
+          "Unit tests": {
+            sh 'fdsfsadfa'
+            
+          }
+        )
       }
     }
-    stage('Unit tests') {
+    stage('Tickets') {
       steps {
         sh 'gfdgdfgdfg'
+        node(label: 'gdgd') {
+          echo 'gdfgd'
+        }
+        
       }
     }
     stage('Release') {
       steps {
-        sh 'fgdgdsfg'
+        sh 'fgdgdsfgfgdsfg'
       }
     }
   }
