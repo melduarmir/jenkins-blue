@@ -21,6 +21,13 @@ pipeline {
           },
           "Unit tests": {
             sh 'fdsfsadfa'
+            node(label: '534543') {
+              timeout(time: 55) {
+                sh 'dffdsafds'
+              }
+              
+            }
+            
             
           }
         )
