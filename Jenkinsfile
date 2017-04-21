@@ -28,6 +28,12 @@ pipeline {
               
             }
             
+            VersionNumber(versionNumberString: '5', skipFailedBuilds: true)
+            junit 'rtert'
+            waitUntil() {
+              sh 'gdfgdsfg'
+            }
+            
             
           }
         )
